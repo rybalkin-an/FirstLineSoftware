@@ -28,7 +28,7 @@ public class UsersTest extends TestsBase {
     private final String pathUsers = "/users/";
     private static List<DataItem> users = new ArrayList<>();
 
-    @Description("GET list of all users")
+    @Description("1. GET list of all users")
     @MethodSource("in.reqres.api.CommonHelper#pages")
     @ParameterizedTest(name =
             "When send GET /users?page={index}" +
@@ -120,7 +120,7 @@ public class UsersTest extends TestsBase {
                 "When send PUT /users/{userId} " +
                 "Then status code 200 " +
                 "And return new user response")
-        @Description("Update the user's name to 'Sam' ")
+        @Description("4. Update the user's name to 'Sam' ")
         void givenUser_AndNewUserName_whenPutUsers_thenReturnUsersResponse(){
             String name = "Sam";
             String job = "Dev";
@@ -146,7 +146,7 @@ public class UsersTest extends TestsBase {
                 "When send DELETE /users/{userId} " +
                 "Then status code 204 " +
                 "And return new user response")
-        @Description("Update the user's name to 'Sam' ")
+        @Description("5. Delete the user ")
         void givenUser_whenDeleteUsers_thenReturnSC204(){
             given(requestSpec)
                     .when()
