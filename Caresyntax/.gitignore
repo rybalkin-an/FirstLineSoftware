@@ -1,0 +1,7 @@
+target
+build
+*.iml
+../.idea
+.allure
+log
+*.log
