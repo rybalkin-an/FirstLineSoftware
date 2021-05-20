@@ -16,7 +16,7 @@ public class CommonHelper {
     }
 
     @Step("get total_pages from list users")
-    private static Integer getTotalPages(){
+    public static Integer getTotalPages(){
         String pathUsers = "/users";
         RequestSpecification requestSpec = new TestsBase().requestSpec;
         return given(requestSpec)

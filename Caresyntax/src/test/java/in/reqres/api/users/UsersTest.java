@@ -16,7 +16,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static in.reqres.api.CommonHelper.printNewUserIdAndName;
+import static in.reqres.api.CommonHelper.*;
 import static io.restassured.RestAssured.given;
 import static org.apache.http.HttpStatus.*;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -45,9 +45,8 @@ public class UsersTest extends TestsBase {
                 .extract()
                 .response()
                 .as(UsersResponse.class);
-
         users.addAll(response.getData());
-        System.out.println(users);
+        if (pageNumber.equals(getTotalPages())) System.out.println(users);
     }
 
     @Test
@@ -105,7 +104,7 @@ public class UsersTest extends TestsBase {
                     .then()
                     .assertThat()
                     .statusCode(SC_CREATED)
-                    .and().log().all()
+                    .and()
                     .extract()
                     .response();
 
@@ -134,7 +133,7 @@ public class UsersTest extends TestsBase {
                     .put(pathUsers + userId)
                     .then()
                     .assertThat()
-                    .statusCode(SC_OK).log().all()
+                    .statusCode(SC_OK)
                     .and()
                     .assertThat()
                     .body("name", equalTo(name));
@@ -153,9 +152,8 @@ public class UsersTest extends TestsBase {
                     .when()
                     .delete(pathUsers + userId)
                     .then()
-                    .assertThat().log().all()
+                    .assertThat()
                     .statusCode(SC_NO_CONTENT);
-
         }
     }
 }
