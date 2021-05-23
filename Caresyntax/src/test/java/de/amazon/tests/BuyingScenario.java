@@ -3,13 +3,11 @@ package de.amazon.tests;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import de.amazon.pages.ItemPage;
 import de.amazon.pages.MainPage;
 import de.amazon.pages.SearchResultPage;
 import de.amazon.pages.ShoppingCartPage;
 import de.amazon.pages.elements.Header;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -73,8 +71,7 @@ public class BuyingScenario {
         ShoppingCartPage shoppingCartPage = new Header().clickOnShoppingCardIcon();
         List<String> res = shoppingCartPage.getListNamesItemsInShoppingCart();
 
-        assertThat(res).contains(firstItemName);
-        assertThat(res).contains(secondItemName);
+        assertThat(res).contains(firstItemName, secondItemName);
     }
 
     @Test

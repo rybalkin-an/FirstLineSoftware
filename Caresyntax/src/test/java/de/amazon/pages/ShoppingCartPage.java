@@ -7,6 +7,7 @@ import java.util.List;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ShoppingCartPage {
     private ElementsCollection itemNameList = $$x("//div[@class='sc-list-item-content']//li[1]");
@@ -34,7 +35,7 @@ public class ShoppingCartPage {
 
     @Step("Click on 'Move to card' Button")
     public ShoppingCartPage clickMoveToCardButton() {
-        moveToCardButton.click();
+        moveToCardButton.click(ClickOptions.usingJavaScript());
         return this;
     }
 
