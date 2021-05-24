@@ -12,6 +12,7 @@ Run test:
 ```mvn clean test```  
 Run report:
 ```allure serve path_to_allure-results```
+---
 
 
 ### TASK 2 A, B, C Solutions
@@ -40,8 +41,9 @@ c. Create a test plan to validate the new system and its compatibility to an alr
 * smoke testing
 * contract testing
 
+---
 
-###Instructions: 
+###Instructions:  
 Below are two tasks that you need to fulfil and share your code and notes with us. Please see each task for specific requirements. You should deliver either via a zip file or a Github private repository. You can use Selenium and Java/Python. We will evaluate your answers based on code performance, organization, and accuracy of the tasks.
 
 Task 1: 
